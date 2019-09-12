@@ -10,6 +10,6 @@ if __name__ == "__main__":
         s = '''arguments:'''
     print("{} {}".format(len(argv) - 1, s))
     number = 1
-    for m in argv[1:]:
-        print("{}: {}".format(number, m))
+    for c in argv[1:]:
+        print("{}: {}".format(number, c))
         number += 1
