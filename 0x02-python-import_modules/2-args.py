@@ -3,9 +3,9 @@
 if __name__ == "__main__":
     from sys import argv
     if len(argv) == 1:
-        s = '''argument.'''
+        s = "arguments."
     elif len(argv) == 2:
-        s = "arguments:"
+        s = "argument:"
     else:
         s = "arguments:"
     print("{} {}".format(len(argv) - 1, s))
