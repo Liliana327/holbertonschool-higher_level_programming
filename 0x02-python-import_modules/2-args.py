@@ -5,9 +5,9 @@ if __name__ == "__main__":
     if len(argv) == 1:
         s = '''argument.'''
     elif len(argv) == 2:
-        s = '''argument:'''
+        s = "arguments:"
     else:
-        s = '''argument:'''
+        s = "arguments:"
     print("{} {}".format(len(argv) - 1, s))
     number = 1
     for m in argv[1:]:
