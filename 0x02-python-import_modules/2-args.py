@@ -3,11 +3,11 @@
 if __name__ == "__main__":
     from sys import argv
     if len(argv) == 1:
-        s = '''arguments.'''
+        s = "arguments."
     elif len(argv) == 2:
-        s = '''arguments:'''
+        s = "arguments:"
     else:
-        s = '''arguments:'''
+        s = "arguments:"
     print("{} {}".format(len(argv) - 1, s))
     number = 1
     for c in argv[1:]:
