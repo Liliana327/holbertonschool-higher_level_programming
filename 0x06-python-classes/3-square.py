@@ -11,10 +11,10 @@
 class Square:
     """ Creates a class Square which has a size
     """
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """ Initializes instance attributes
         """
-        if not isinstance(size , int):
+        if not isinstance(size, int):
             raise TypeError('''size must be an integer''')
         if size < 0:
             raise ValueError('''size must be >= 0''')
