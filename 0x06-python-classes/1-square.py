@@ -7,10 +7,11 @@
         ./0-main.py
 """
 
+
 class Square:
     """ Creates a class Square which has a size
     """
-    def __init__ (self, size):
+    def __init__(self, size):
         """ Initializes instance attributes
 
             (int) is the size of the square.
