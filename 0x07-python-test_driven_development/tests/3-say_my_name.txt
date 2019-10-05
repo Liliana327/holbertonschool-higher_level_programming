@@ -1,18 +1,29 @@
 >>> say_my_name = __import__("3-say_my_name").say_my_name
 
 
-	>>> say_my_name("Liliana", "Ospina")
-	Liliana Ospina
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
 
 
-	>> say_my_name("Liliana")
-	Liliana
+	>> say_my_name("Bob")
+	My name is Bob
 
 
-	>>> say_my_name("Hello Word", 5)
+	>>> say_my_name("Bob", 5)
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
+
+    
+       >>> say_my_name()
+       Traceback (most recent call last):
+       ...
+       TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+       >>> say_my_name(Hello)
+       Traceback (most recent call last):
+       NameError: name 'Hello' is not defined
 
 
 	>>> say_my_name(5, "Hello Holberton School")
