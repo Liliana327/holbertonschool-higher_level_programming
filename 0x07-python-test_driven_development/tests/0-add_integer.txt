@@ -26,6 +26,16 @@ Using ``add_integer``
         >>> add_integer(.999999999999999, .999999999999999999)
         1
         
+        >>> add_integer(2)
+        100
+
+
+        >>> add_integer(m, 1)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'm' is not defined
+
+        
         >>> add_integer()
         Traceback (most recent call last):
         ...
@@ -44,17 +54,6 @@ Using ``add_integer``
         ValueError: cannot convert float NaN to integer
 
         
-        >>> add_integer(float('inf'), 2)
-        Traceback (most recent call last):
-        ...
-        OverflowError: cannot convert float infinity to integer
-
-        >>> add_integer(-float('inf'), 2)
-        Traceback (most recent call last):
-        ...
-        OverflowError: cannot convert float infinity to integer
-
-
         >>> add_integer("Hello_word")
         Traceback (most recent call last):
         ...
