@@ -23,6 +23,9 @@ Using ``add_integer``
         >>> add_integer (1.6, 5)
         6
         
+        >>> add_integer(.999999999999999, .999999999999999999)
+        1
+        
         >>> add_integer(float('nan'), 2)
         Traceback (most recent call last):
         ...
