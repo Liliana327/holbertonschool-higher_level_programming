@@ -11,6 +11,8 @@
 
         >>> add_integer(1.0, 2.0)
         3
+        >>> add_integer(1, 2.0)
+        3
 
         >>> add_integer (1.6, 5)
         6
@@ -18,7 +20,7 @@
         >>> add_integer (10.9, 5.0)
         15
 
-        >>> add_integer('''Hello_word''')
+        >>> add_integer("Hello_word")
         Traceback (most recent call last):
         ...
         TypeError: a must be an integer
@@ -30,7 +32,7 @@
         TypeError: b must be an integer
 
 
-        >>> add_integer('''Hello''', '''Word''')
+        >>> add_integer("Hello", "Word")
         Traceback (most recent call last):
         ...
         TypeError: a must be an integer
