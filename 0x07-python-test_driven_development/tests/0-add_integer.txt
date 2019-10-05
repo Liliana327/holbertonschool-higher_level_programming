@@ -1,5 +1,7 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
+checking stdin/out
+
         >>> add_integer(3, 3)
         6
 
@@ -10,6 +12,9 @@
         -6
 
         >>> add_integer(1.0, 2.0)
+        3
+
+        >>> add_integer (1, 2.0)
         3
 
         >>> add_integer('''Hello_word''')
@@ -30,7 +35,7 @@
         TypeError: a must be an integer
 
 
-        >>> add_integer(hola, None)
+        >>> add_integer(Hello_word, None)
         Traceback (most recent call last):
         ...
-        NameError: name 'hola' is not defined
+        NameError: name 'Hello_word' is not defined
