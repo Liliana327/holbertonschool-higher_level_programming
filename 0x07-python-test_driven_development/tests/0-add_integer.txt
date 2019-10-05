@@ -24,7 +24,7 @@ Using ``add_integer``
         6
 
         >>> add_integer (10.9, 5.5)
-        10
+        16
 
         >>> add_integer("Hello_word")
         Traceback (most recent call last):
