@@ -1,6 +1,10 @@
->>> add_integer = __import__('0-add_integer').add_integer
+The ``0_add_integer`` module
+======================
 
-checking stdin/out
+Using ``add_integer``
+-------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
 
         >>> add_integer(3, 3)
         6
