@@ -1,0 +1,26 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+        >>> text_indentation("")
+
+
+        >>> text_indentation("  ")
+
+
+	>>> text_indentation(".")
+	.
+	<BLANKLINE>
+
+
+	>>> text_indentation(" .? ")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+
+
+	>>> text_indentation(""")
+	Traceback (most recent call last):
+	...
+	SyntaxError: EOF while scanning triple-quoted string literal
+
