@@ -20,4 +20,3 @@ def print_square(size):
         for a in range(size):
             print("#", end="")
         print()
-
