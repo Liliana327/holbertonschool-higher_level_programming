@@ -18,14 +18,16 @@ def matrix_divided(matrix, div):
         raise TypeError(Error_1)
     if not isinstance(matrix[0], list) and not isinstance(matrix[1], list):
         raise TypeError(Error_1)
-    if len(matrix[0]) is not len(matrix[1]):
-        raise TypeError(Error_2)
 
-    for i in matrix[0] + matrix[1]:
-        if not isinstance(i, int) and not isinstance(i, float):
-            raise TypeError(Error_1)
+    length = len(matrix[0])
 
-    matrix = [matrix[0], matrix[1]]
+    for i in matrix:
+        if len(i) != length:
+            raise TypeError(Error_2)
+        for ele in i:
+            if not isinstance(ele, (int, float)):
+                raise TypeError(Error_1)
+
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError(Error_3)
     if div == 0:
