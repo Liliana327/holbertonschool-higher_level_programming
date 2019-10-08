@@ -12,7 +12,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     for M in range(len(text)):
-        if text[M] is ' ' and text[M + 1] is ' ':
+        if text[M] == ' ' and text[M + 1] == ' ':
             continue
         if text[M] is ' ' and text[M - 1] is '.':
             continue
