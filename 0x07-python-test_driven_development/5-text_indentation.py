@@ -23,7 +23,6 @@ def text_indentation(text):
         if text[M] is ' ' and text[M - 1] is ' ':
             continue
         print(text[M], end='')
-        if text[M] is '.' or text[M] is '?' or text[M] is ':':
+        if text[M] == '.' or text[M] == '?' or text[M] == ':':
             print()
             print()
-
