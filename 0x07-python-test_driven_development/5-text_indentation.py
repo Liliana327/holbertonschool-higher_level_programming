@@ -8,20 +8,18 @@ after each of these characters: ., ? and :
 def text_indentation(text):
 
     if not isinstance(text, str):
-        raise TypeError('text must be a string')
+        raise TypeError('''text must be a string''')
 
-    for M in range(len(text)):
-        if text[M] == ' ' and text[M + 1] is ' ':
+    string = list(text)
+    for M in range(0, len(string)):
+        try:
+            if string[M] is '.' or string[M] is '?' or string[M] is ':':
+                string.insert(M + 1, '\n')
+        except:
             continue
-        if text[M] is ' ' and text[M - 1] is '.':
-            continue
-        if text[M] is ' ' and text[M - 1] is '?':
-            continue
-        if text[M] is ' ' and text[M - 1] is ':':
-            continue
-        if text[M] is ' ' and text[M - 1] is ' ':
-            continue
-        print(text[M], end='')
-        if text[M] is '.' or text[M] is '?' or text[M] is ':':
-            print()
-            print()
+
+    string = "".join(string).split('\n')
+    for M in string:
+        print(M.strip())
+        print() 
+
