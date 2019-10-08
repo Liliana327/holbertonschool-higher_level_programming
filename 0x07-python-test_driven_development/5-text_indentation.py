@@ -13,7 +13,7 @@ def text_indentation(text):
     string = list(text)
     for M in range(0, len(string)):
         try:
-            if string[M] is '.' or string[M] is '?' or string[M] is ':':
+            if string[M] == '.' or string[M] == '?' or string[M] == ':':
                 string.insert(M + 1, '\n')
         except:
             continue
