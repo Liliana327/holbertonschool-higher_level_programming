@@ -1,10 +1,8 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 
-	>>> text_indentation("   Hello Word   ")
+	>>> text_indentation('Hello Word')
 	Hello Word
-	<BLANKLINE>
-
 
 	>>> text_indentation(["Hello", "Word"])
 	Traceback (most recent call last):
@@ -18,11 +16,3 @@
 	.
 	<BLANKLINE>
 
-
-	>>> text_indentation(" . ? ")
-	.
-	<BLANKLINE>
-	?
-	<BLANKLINE>
-	<BLANKLINE>
-	<BLANKLINE>
