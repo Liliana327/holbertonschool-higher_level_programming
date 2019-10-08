@@ -60,6 +60,6 @@ class Rectangle:
         esto1 = "{}({}, {})".format(esto0, self.width, self.height)
         string = esto1
         return string
-    
+
     def __del__(self):
         print("Bye rectangle...")
