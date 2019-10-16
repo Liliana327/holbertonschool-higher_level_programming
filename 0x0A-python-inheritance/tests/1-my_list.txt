@@ -1,0 +1,40 @@
+>>>MyList = __import__('1-my_list').MyList
+
+
+	>>> My_List = MyList()
+
+
+stdin/out
+
+	>>> My_List.append(1)
+	>>> My_List.append(3)
+	>>> My_List.append(5)
+	>>> My_List.append(4)
+	>>> My_List.append(2)
+	>>> print(My_List)
+	[1, 3, 5, 4, 2]
+
+	>>> My_List.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> print(My_List)
+	[1, 3, 5, 4, 2]
+
+negative numbers
+
+	>>> My_List = MyList()
+
+	>>> My_List.append(-1)
+	>>> My_List.append(5)
+	>>> My_List.append(2)
+	>>> My_List.append(7)
+	>>> My_List.print_sorted()
+	[-1, 2, 5, 7]
+
+list of one number
+
+	>>> My_List = MyList()
+
+	>>> My_List. append(2)
+	>>> My_List.print_sorted()
+	[2]
