@@ -9,6 +9,7 @@ from models.base import Base
 
 class Rectangle(Base):
 
+    """ """
     def __init__(self, width, height, x=0, y=0, id=None):
 
         'Initializes Rectangle'
@@ -22,11 +23,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
+
+        """ """
         return self.__width
 
     @width.setter
     def width(self, value):
 
+        """ """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -35,11 +39,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
+
+        """ """
         return self.__height
 
     @height.setter
     def height(self, value):
 
+        """ """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -48,11 +55,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
+
+        """ """
         return self.__x
 
     @x.setter
     def x(self, value):
 
+        """ """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -61,11 +71,13 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ """
         return self.__y
 
     @y.setter
     def y(self, value):
 
+        """ """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -75,11 +87,15 @@ class Rectangle(Base):
     """Task number 4"""
 
     def area(self):
+
+        """ """
         return self.width * self.height
 
     """Task number 5"""
 
     def display(self):
+
+        """ """
         for M in range(self.y):
             print()
         for M in range(self.height):
@@ -93,12 +109,15 @@ class Rectangle(Base):
     """Task number 6"""
 
     def __str__(self):
+
+        """ """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
     """Task number 7 and 8"""
 
     def update(self, *args, **kwargs):
 
+        """ """
         if len(args) == 0:
             for keywords, value in kwargs.items():
                 self.__setattr__(keywords, value)
@@ -115,6 +134,8 @@ class Rectangle(Base):
     """Task number 12"""
 
     def to_dictionary(self):
+
+        """ """
         return {'id': getattr(self, "id"),
                 'width': getattr(self, "width"),
                 'height': getattr(self, "height"),
