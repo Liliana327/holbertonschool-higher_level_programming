@@ -1,112 +1,143 @@
 #!/usr/bin/python3
-'''
-Unit tests for Base class
-'''
-import unittest
+""" Unit tests for 1) models/base.py """
+
 from models.base import Base
-from models.square import Square
-import json
+# from models.Rectangle import Rectangle
+import unittest
 
 
-class test_base(unittest.TestCase):
-    '''
-    Tests for Base
-    '''
-    def test_id1(self):
-        '''
-        Testing no id sent
-        '''
-        i1 = Base()
-        self.assertEqual(1, i1.id)
+class Test_Base(unittest.TestCase):
 
-    def test_id2(self):
-        '''
-        Testing a valid id
-        '''
-        i1 = Base(33)
-        self.assertEqual(33, i1.id)
+    def setUP(self):
+        """ ??? """
+        pass
 
-    def test_id3(self):
-        '''
-        Testing a negative id
-        '''
-        i1 = Base(-33)
-        self.assertEqual(-33, i1.id)
+    def tearDown(self):
+        """ yooo """
+        pass
 
-    def test_id4(self):
-        '''
-        Testing an id of 0
-        '''
-        i1 = Base(0)
-        self.assertEqual(0, i1.id)
+    def test_docstring(self):
+        """ checks if docstring is there """
+        self.assertIsNotNone(Base.__doc__)
 
-    def test_id5(self):
-        '''
-        Testing a non-int value for id
-        '''
-        i1 = Base("hi")
-        self.assertEqual("hi", i1.id)
+    def test_simple(self):
+        """ simplest test cases """
+        bae = Base(1)
+        self.assertEqual(1, bae.id)
+        self.assertNotEqual(99, bae.id)
+        bae = Base(99)
+        self.assertEqual(bae.id, 99)
 
-    def test_id5(self):
-        '''
-        Testing a negative id
-        '''
-        i1 = Base(-33)
-        self.assertEqual(-33, i1.id)
+    def test_InputErrors(self):
+        """ tests for input error """
+        with self.assertRaises(AttributeError):
+            self.assertIsEqual(bae(), 1)
 
-    def test_id6(self):
-        '''
-        Testing non-int value for id
-        '''
-        i1 = Base([1, 2, 3])
-        self.assertEqual([1, 2, 3], i1.id)
+    def test_empty(self):
+        """ test empty conditions """
+        bae = Base()
+        self.assertEqual(1, bae.id)
+        bae = Base(None)
+        self.assertEqual(2, bae.id)
+        bae = Base(None)
+        self.assertEqual(3, bae.id)
+        bae = Base(7)
+        self.assertEqual(7, bae.id)
 
-    def test_base1(self):
-        '''
-        Testing int to JSON string function
-        '''
-        s1 = Square(33)
-        json_obj = s1.to_dictionary()
-        converted = Base.to_json_string([json_obj])
-        self.assertEqual(type(converted), str)
+    def test_string(self):
+        """ tests strings """
+        bae = Base(2)
+        self.assertEqual(2, bae.id)
+        bae = Base("2")
+        self.assertEqual('2', bae.id)
 
-    def test_base2(self):
-        '''
-        Testing multiple ints to JSON
-        '''
-        s1 = Square(33, 11, 9, 10)
-        json_obj = s1.to_dictionary()
-        converted = Base.to_json_string([json_obj])
-        self.assertEqual(converted, [{"id": 33, "size": 11, "x": 9, "y": 10}])
+    def test_float(self):
+        """ test floats """
+        bae = Base(3)
+        self.assertEqual(3, bae.id)
+        bae = Base(3.45)
+        self.assertEqual(3.45, bae.id)
+        bae = Base(-4.56)
+        self.assertEqual(-4.56, bae.id)
 
-    def test_base3(self):
-        '''
-        Testing sending None to to_json_string function
-        '''
-        s1 = Square(33, 11, 9, 10)
-        json_obj = s1.to_dictionary()
-        converted = Base.to_json_string(None)
-        self.assertEqual(converted, "[]")
+    def test_weird(self):
+        """ test wtf things """
+        bae = Base(4)
+        self.assertEqual(4, bae.id)
+        bae = Base([1, 2])
+        self.assertEqual([1, 2], bae.id)
+        bae = Base([1, "2"])
+        self.assertEqual([1, '2'], bae.id)
+        bae = Base([1, [1, 2]])
+        self.assertEqual([1, [1, 2]], bae.id)
+        bae = Base({"needle": 2})
+        self.assertEqual({"needle": 2}, bae.id)
+        bae = Base((1, 2))
+        self.assertEqual((1, 2), bae.id)
+        bae = Base(1)
+        self.assertEqual(1, bae.id)
+        bae = Base()
+        self.assertEqual(6, bae.id)
 
-    def test_id7(self):
-        '''
-        Testing a dict for id
-        '''
-        i1 = Base({'id': 33})
-        self.assertEqual({'id': 33}, i1.id)
+    def test_moreErrors(self):
+        """ more error checking """
+        # with self.assertRaises(SyntaxError):
+        # bae = base ( , )
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('NaN'))
+        self.assertNotEqual(float('NaN'), bae.id)
+        with self.assertRaises(ValueError):
+            bae = Base(float('bob'))
+        with self.assertRaises(ValueError):
+            bae = Base(int('poop'))
+        bae = Base()
+        self.assertEqual(4, bae.id)
 
-    def test_id8(self):
-        '''
-        Testing tuple for id
-        '''
-        i1 = Base((33, 44))
-        self.assertEqual((33, 44), i1.id)
+        # testing something
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        bae = Base(float('inf'))
+        self.assertEqual(float('inf'), bae.id)
+        # done with testing
 
-    def test_base4(self):
-        '''
-        Testing an empty list to to_json_string function
-        '''
-        s1 = Square(33, 11, 9, 10)
-        json_obj = s1.to_dictionary()
-        converted = Base.to_json_string([])
-        self.assertEqual(converted, "[]")
+        bae = Base()
+        self.assertEqual(5, bae.id)
+
+        def test_id(self):
+            """ tests the if id works properly """
+            poop = Base()
+            poopID = poop.id
+            poop2 = Base(69)
+            poop3 = Base(100)
+            poop4 = Base()
+            self.assertTrue(poopID, 1)
+            self.assertEqual(poopID, 1)
+            self.assertFalse(poopID, poop4.id)
+            self.assertTrue(poopID + 1, poop4.id)
+            self.assertFalse(poop2, poop3)
+            seld.assertEqual(poop3.id, 100)
+
+        def test_class(self):
+            """ tests subclass """
+            poop = Base()
+            self.assertTrue(issubclass(type(poop), Base))
+
+        def test_to_json_string(self):
+            """ tests if this method works """
+            # test1 = Rectangle(1, 1, 1, 1, 1)
+            """ nvm cant call child from inside parent. """
+            pass
+
+if __name__ == "__main__":
+    unittest.main()
