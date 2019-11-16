@@ -1,0 +1,27 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	>>> base = BaseGeometry()
+
+	>>> base.integer_validator("Hola_Mundo", 16)
+
+	>>> base.integer_validator("Hello", 50)
+
+	>>> try:
+	...
+	base.integer_validator("if it fails", -2)
+	...
+	except Exception as e:
+	...
+	print("[{}] {}".format(e.__class__.__name__, e))
+	... 
+	[ValueError] if it fails it is greater than 0.
+
+	>>> try:
+	...
+	base.integer_validator("new case", "if it is not an integer") 
+	...
+	except Exception as e:
+	... 
+	print("[{}] {}".format(e.__class__.__name__, e))
+	... 
+	[TypeError] the new case must be whole
