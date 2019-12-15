@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     curs = db_connection.cursor()
     curs.execute("SELECT * FROM states WHERE name='{}'"
-                 .format(searched))
+                 .format(searched, database))
 
     for row in curs.fetchall():
         print(row)
