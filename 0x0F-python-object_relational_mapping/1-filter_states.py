@@ -19,7 +19,7 @@ if __name__ == '__main__':
         )
 
     curs = db_connection.cursor()
-    curs.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    curs.execute("SELECT * FROM states WHERE name LIKE 'N%'" .format(databese))
     for row in curs.fetchall():
         print(row)
     curs.close()
