@@ -20,7 +20,8 @@ if __name__ == '__main__':
         )
 
     curs = db_connection.cursor()
-    curs.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC".format(searched))
+    curs.execute("SELECT * FROM states WHERE name LIKE BINARY
+                 '{}' ORDER BY states.id ASC".format(searched))
 
     for row in curs.fetchall():
         print(row)
