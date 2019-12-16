@@ -19,10 +19,9 @@ if __name__ == '__main__':
         )
 
     curs = db_connection.cursor()
-    curs.execute("SELECT cities.id, cities.name, \
-                  states.name FROM cities \
-                  INNER JOIN states \
-                  ON states.id=cities.state_id")
+    curs.execute("SELECT cities.id, cities.name, states.name \
+                 FROM cities JOIN states ON states.id = cities.state_id"
+                 .format(database))
     for row in curs.fetchall():
         print(row)
     curs.close()
