@@ -22,7 +22,7 @@ if __name__ == '__main__':
     init_basedata = session_basedata()
     query = session_basedata().query(State).filter(State.name.like('%a%'))
 
-    for query in query.order_by(State.id):
+    for query in query.order_by(State.id).all():
         print("{}: {}".format(query.id, query.name))
 
 init_basedata.close()
