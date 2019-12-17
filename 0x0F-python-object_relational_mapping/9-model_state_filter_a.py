@@ -19,10 +19,11 @@ if __name__ == '__main__':
 
     Base.metadata.create_all(db_connection)
     session_basedata = sessionmaker(bind=db_connection)
-    init_basedata = session_basedata()
-    query = session_basedata().query(State).filter(State.name.like('%a%'))
+    init_data = session_basedata()
+    query = init_data.query(State).order_by(State.id)
 
-    for query in query.order_by(State.id).all():
-        print("{}: {}".format(query.id, query.name))
+    for i, query in enumerate(query, 1):
+        if "a" in query.name:
+            print("{}: {}".format(i, query.name))
 
-init_basedata.close()
+    init_data.close()
