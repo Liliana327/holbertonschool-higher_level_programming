@@ -17,7 +17,7 @@ if __name__ == "__main__":
     '''consulta con parametros'''
     consulta = parse.urlencode(params)
 
-    u = consulta.encode('ascii')
+    consulta = consulta.encode('ascii')
 
     resp = request.Request(url, consulta)
 
