@@ -2,8 +2,9 @@
 '''Valor de encabezado de respuesta'''
 
 from urllib import request
-import sys
+from sys import argv
 
 '''url del servicio http'''
-with request.urlopen(sys.argv[1]) as response:
+resp = request.Request(argv[1])
+with request.urlopen(resp) as response:
         print(response.headers.get('X-Request-Id'))
