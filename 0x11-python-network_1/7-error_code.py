@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Código de error # 1 
+'''Código de erro #1
 '''
 if __name__ == "__main__":
 
