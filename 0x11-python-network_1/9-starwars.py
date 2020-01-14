@@ -15,7 +15,6 @@ if __name__ == "__main__":
         'search': argv[1]
     }
 
-
     resp = requests.get(url, params=params).json()
     print("Number of results: {}".format(resp.get('count')))
     for i in resp.get('results'):
