@@ -13,7 +13,7 @@ if __name__ == "__main__":
         'q': q
     }
 
-    q = argv[1] if len(argv) > 0 else ""
+    q = argv[1] if len(argv) > 1 else ""
     try:
         resp = requests.post(url, params).json()
         if 'id' in resp or 'name' in resp:
