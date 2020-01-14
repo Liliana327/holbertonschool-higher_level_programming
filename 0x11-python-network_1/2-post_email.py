@@ -7,7 +7,7 @@ if __name__ == "__main__":
     from sys import argv
 
     '''url del servicio http'''
-    url = 'https://intranet.hbtn.io/status'
+    url = argv[1]
 
     '''parametros de la consulta'''
     params = {
@@ -17,11 +17,9 @@ if __name__ == "__main__":
     '''consulta con parametros'''
     consulta = parse.urlencode(params)
 
-    '''creacion de la solicitud'''
-    u = request.urlopen('{}?{}'.format(url, consulta))
+    u = consulta.encode('ascii')
 
-    '''lectura de la respuesta'''
-    respuesta = u.read()
+    resp = request.Request(url, consulta)
 
-    '''imprimir la respuesta en formato legible'''
-    print(respuesta.decode('utf-8'))
+    with request.urlopen(resp) as response:
+        print(response.read().decode('utf-8'))
