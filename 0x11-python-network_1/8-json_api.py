@@ -10,7 +10,7 @@ if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
 
     params = {
-        'q': 'q'
+        'q': q
     }
 
     q = argv[1] if len(argv) > 0 else ""
