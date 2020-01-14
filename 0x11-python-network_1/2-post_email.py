@@ -18,7 +18,7 @@ if __name__ == "__main__":
     consulta = parse.urlencode(params)
 
     '''creacion de la solicitud'''
-    u =  request.urlopen('{}?{}'.format(url, consulta))
+    u = request.urlopen('{}?{}'.format(url, consulta))
 
     '''lectura de la respuesta'''
     respuesta = u.read()
