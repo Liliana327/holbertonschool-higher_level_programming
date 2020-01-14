@@ -9,15 +9,19 @@ if __name__ == "__main__":
 
     url = 'http://0.0.0.0:5000/search_user'
 
-    params = {
+    data = {
         'q': q
     }
 
-    q = argv[1] if len(argv) > 1 else ""
+    q = ""
+    if len(argv) == 2:
+        q = argv[1]
+
     try:
-        resp = requests.post(url, params).json()
-        if 'id' in resp or 'name' in resp:
-            print("[{}] {}".format(resp['id'], resp['name']))
+        resp = requests.post(url, data).json()
+
+        if resp:
+            print('[{}] {}'.format(resp.get('id'), resp.get('name')))
         else:
             print("No result")
     except ValueError:
